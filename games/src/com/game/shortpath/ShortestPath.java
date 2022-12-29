@@ -50,7 +50,7 @@ public class ShortestPath {
 		Queue<int[]> q = new LinkedList<>();
 		q.offer(new int[] { 0, 0, k, 0 });
 		visit[0][0][0] = true;
-		int rows, cols, j = 0;
+		int rows, cols;
 		while (!(q.isEmpty())) {
 			int[] val = q.poll();
 			int row = val[0];
@@ -80,7 +80,6 @@ public class ShortestPath {
 					}
 				}
 			}
-			j++;
 		}
 		return -1;
 	}
