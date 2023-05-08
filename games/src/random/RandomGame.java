@@ -7,7 +7,7 @@ public class RandomGame {
 	private Scanner input = new Scanner(System.in);
 	private Random random = new Random();
 	private int size = 3, step, i = 0, j = 0, m = 0, n = size - 1;
-	private int board[][] = new int[size][size];
+	private String board[][] = new String[size][size];
 	private int player1, player2;
 
 	public static void main(String[] args) {
@@ -15,26 +15,24 @@ public class RandomGame {
 		game.setUp();
 		game.start();
 	}
-	private static void instructions(int a) {
-		System.out.println("Enter co-ordinates : ");
-	}
+
 	private static void instructions() {
 		System.out.println("Enter co-ordinates : ");
 	}
 
 	private void setUp() {
-		board[0][0] = 1;
-		board[0][size - 1] = 2;
+		board[0][0] = "P1";
+		board[0][size - 1] = "P2";
 		System.out.println("Both players are located at the position...... \n         ***START GAME***");
 	}
 
 	private void printBoard() {
-		System.out.println("   1 2 3 4 5 6 ");
+		System.out.println("   1 2 3 ");
 		System.out.println("--+------------");
 		for (int i = 0; i < size; i++) {
 			System.out.print(i + 1 + " |");
 			for (int j = 0; j < size; j++) {
-				if (board[i][j] != 0)
+				if (board[i][j] != null)
 					System.out.print(board[i][j] + " ");
 				else
 					System.out.print("* ");
@@ -47,7 +45,7 @@ public class RandomGame {
 		int i, j;
 		i = random.nextInt(0, size);
 		j = random.nextInt(0, size);
-		board[i][j] = 5;
+		board[i][j] = "5";
 	}
 
 	private void start() {
