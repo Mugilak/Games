@@ -19,11 +19,7 @@ public class Map {
 		int j = 0;
 		for (int i = 0; i < size; i++) {
 			j = 0;
-			if (i == 0) {
-				for (j = 1; j < size; j++) {
-					map[i][j] = (char) (j + 64);
-				}
-			} else {
+			if (i != 0) {
 				if (j == 0) {
 					map[i][j] = (char) (i + 64);
 					j++;
@@ -37,6 +33,9 @@ public class Map {
 				}
 			}
 			for (j = 1; j < size; j++) {
+				if (i == 0) {
+					map[i][j] = (char) (j + 64);
+				}
 				if ((i == 1 && j != 0) || i == size - 1) {
 					map[i][j] = '*';
 				}
@@ -52,14 +51,14 @@ public class Map {
 	public void showMap() {
 		for (char[] row : map) {
 			for (char value : row) {
-				System.out.print(value + " ");
+				System.out.printf("%3s", value);
 			}
 			System.out.println();
 		}
 	}
 
 	public boolean fixPosition(String position, char hold) {
-		int row = position.charAt(0) - 64, column = position.charAt(1) - 64;
+		int row = position.charAt(0) - 48, column = position.charAt(1) - 48;
 		if (row >= 0 && row < size - 1 && column >= 2 && column < size - 1) {
 			if (map[row][column] == ' ') {
 				map[row][column] = hold;

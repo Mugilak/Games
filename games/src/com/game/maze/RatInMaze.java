@@ -70,7 +70,6 @@ public class RatInMaze {
 					}
 					maze[r][c] = 0;
 					findAllPaths(maze, r, c, target, currPath);
-
 					maze[r][c] = 1;
 				}
 			}

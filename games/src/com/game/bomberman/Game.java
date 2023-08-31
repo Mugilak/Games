@@ -38,9 +38,9 @@ public class Game {
 	private void fixInputs() {
 		int count = 0;
 		input.nextLine();
-		System.out.println("Player position : ");
+		System.out.println("Player position : (row and column Ex: 23)");
 		map.fixPosition(input.nextLine(), 'P');
-		System.out.println("Key Position : ");
+		System.out.println("Key Position : (row and column Ex: 34)");
 		map.fixPosition(input.nextLine(), 'K');
 		System.out.println("Villain count : ");
 		count = input.nextInt();
@@ -59,7 +59,7 @@ public class Game {
 	}
 
 	private void createMap() {
-		System.out.println("map size : (max size = 26)");
+		System.out.println("Enter map size : (max size = 26)");
 		int size = checkSize(input.nextInt());
 		map.createMap(size);
 		map.showMap();

@@ -14,7 +14,7 @@ public class MinesweeperLeetcode {
 				{ 'E', 'E', 'E', 'E', 'E' } };
 		int click[] = { 3, 0 };
 		System.out.println("type 1 - " + Arrays.deepToString(updateBoard(board, click)));
-		System.out.println("type 2 - " + Arrays.deepToString(boardUpdate(board, click)));
+		System.out.println("\ntype 2 - " + Arrays.deepToString(boardUpdate(board, click)));
 	}
 
 	public char[][] updateBoard(char[][] board, int[] click) {

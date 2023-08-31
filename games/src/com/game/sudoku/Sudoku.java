@@ -1,5 +1,7 @@
 package com.game.sudoku;
 
+import java.util.Arrays;
+
 public class Sudoku {
 
 	public static void main(String[] args) {
@@ -17,6 +19,7 @@ public class Sudoku {
 
 	public void solveSudoku(char[][] board) {
 		if (solve(board)) {
+			System.out.println(Arrays.deepToString(board));
 			printBoard(board);
 		}
 	}

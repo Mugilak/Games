@@ -18,7 +18,7 @@ public class KnightProbability {
 		int[][] board = new int[n][n];
 		findPossibleMoves(board, k, row, column);
 		return totalMoves;
-	}// (totalMoves == 0) ? 1.0 :
+	}
 
 	private void findPossibleMoves(int[][] board, int k, int row, int column) {
 		int n = board.length, r, c, t = k;

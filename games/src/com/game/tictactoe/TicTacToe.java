@@ -56,17 +56,13 @@ public class TicTacToe {
 
 	private void setAtPosition(int position, char currentPlayer) {
 		int row = 0, column = 0;
-		if (position <= 3) {
-			board[0][position - 1] = currentPlayer;
-		} else {
-			row = position / 3;
-			column = (position % 3) - 1;
-			if (position % 3 == 0) {
-				row -= 1;
-				column = 2;
-			}
-			board[row][column] = currentPlayer;
+		row = position / 3;
+		column = (position % 3) - 1;
+		if (position % 3 == 0) {
+			row -= 1;
+			column = 2;
 		}
+		board[row][column] = currentPlayer;
 	}
 
 	private int getInput(char currentPlayer) {
